@@ -35,7 +35,7 @@ class Net(nn.Module):
         x = self.drop(x)
         x = self.fc2(x)
         return F.log_softmax(x, dim=1)
-    
+
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.RandomHorizontalFlip(),
@@ -45,7 +45,6 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.5], std=[0.5])
 ])
-
 
 # Define custom dataset class
 class BrainTumorDataset(Dataset):
@@ -77,7 +76,7 @@ class BrainTumorDataset(Dataset):
         return image, label
 
 # Path to the dataset directory
-dataset_root = 'C:\\Users\\humbl\\Documents\\Pytorch Testing\\Brain MRI\\BrainMRI\\data'
+dataset_root = 'C:\\Users\\humbl\\Documents\\Pytorch Testing\\Brain MRI\\MRI Images\\data'
 
 # Create the dataset
 dataset = BrainTumorDataset(root_dir=dataset_root, transform=transform)
@@ -140,4 +139,3 @@ if __name__ == '__main__':
 
     # Save the model
     torch.save(model.state_dict(), 'BrainMRI.pt')
-

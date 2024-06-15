@@ -67,17 +67,17 @@ def predict(image_path):
     return prediction
 
 # Example usage
-image_path = 'C:\\Users\\humbl\\Downloads\\9b3c24072a2568610b99707aa719ce850ac5b3ac515d6abb3692649109cf19e9_big_gallery.jpeg'
+image_path = 'C:\\Users\\humbl\\Downloads\\Te-pi_0022.jpg'
 prediction = predict(image_path)
 disease = ''
 if prediction == 0:
-    disease = 'glioma'
+    disease = 'Glioma'
 elif prediction == 1:
-    disease = 'meningioma'
+    disease = 'Meningioma'
 elif prediction == 2:
-    disease = 'no tumor'
+    disease = 'No Tumor'
 else:
-    disease = 'pituitary'
+    disease = 'Pituitary'
 print(f'Prediction: {disease}')
 
 # Display the image
